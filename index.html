@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Client Portal Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <p class="eyebrow">AI SYSTEMS PORTFOLIO</p>
+      <h1>Client Portal</h1>
+      <p>Demo-safe protected entry. No real credentials required.</p>
+      <button id="enterDemo" class="primary">Enter demo workspace</button>
+      <span class="micro">Simulates an authenticated client session.</span>
+    </div>
+  </div>
+
+  <main id="app" class="shell" hidden>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">CLIENT WORKSPACE</p>
+        <h1>Northstar Operations</h1>
+      </div>
+      <div class="session">
+        <span class="status-dot"></span>
+        Demo client session
+        <button id="logoutBtn" class="ghost small-btn">Exit</button>
+      </div>
+    </header>
+
+    <section class="signal-strip" aria-label="Workflow stages">
+      <span>Context</span><b>→</b><span>Prioritize</span><b>→</b><span>Gate</span><b>→</b><span>Act</span><b>→</b><span>Verify</span>
+    </section>
+
+    <section class="metrics">
+      <article><span>Project health</span><strong id="healthMetric">82%</strong><small>On track</small></article>
+      <article><span>Open tasks</span><strong id="openTaskMetric">4</strong><small id="blockedTaskMetric">1 blocked</small></article>
+      <article><span>Approvals</span><strong id="approvalMetric">2</strong><small>Client decisions</small></article>
+      <article><span>Next milestone</span><strong>Aug 21</strong><small>Launch readiness</small></article>
+    </section>
+
+    <section class="grid main-grid">
+      <article class="panel span-2">
+        <div class="panel-head">
+          <div><p class="eyebrow">PROJECT STATE</p><h2>Implementation roadmap</h2></div>
+          <span class="badge success">Active</span>
+        </div>
+        <div id="milestones" class="milestones"></div>
+      </article>
+
+      <article class="panel ai-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">AI-ASSISTED</p><h2>Executive brief</h2></div>
+          <button id="refreshBrief" class="ghost">Refresh</button>
+        </div>
+        <div id="brief" class="brief"></div>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel span-2">
+        <div class="panel-head">
+          <div><p class="eyebrow">ACTION QUEUE</p><h2>Tasks</h2></div>
+          <span class="micro">Click status to advance demo tasks</span>
+        </div>
+        <div id="taskList" class="task-list"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">DECISION GATES</p><h2>Approvals</h2></div>
+          <span id="approvalBadge" class="badge warning">2 waiting</span>
+        </div>
+        <div id="approvalList" class="approval-list"></div>
+      </article>
+    </section>
+
+    <section class="panel activity-panel">
+      <div class="panel-head">
+        <div><p class="eyebrow">VERIFY</p><h2>Activity & decision trail</h2></div>
+        <button id="resetDemo" class="ghost">Reset demo</button>
+      </div>
+      <ol id="activityLog" class="activity-log"></ol>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
